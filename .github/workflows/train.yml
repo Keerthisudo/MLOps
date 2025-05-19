@@ -7,15 +7,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.9'
+      - name: Set working directory to project root
+        run: cd ${{ github.workspace }}
 
-    - name: Install dependencies
-      run: pip install -r requirements.txt
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
 
-    - name: Run training
-      run: python train_model.py
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run training
+        run: python train_model.py
