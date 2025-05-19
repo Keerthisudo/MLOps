@@ -12,7 +12,7 @@ model.fit(X, y)
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    data = request.json['features']  # Expecting a list of features
+    data = request.json['features']  
     prediction = model.predict([data])
     return jsonify({'prediction': int(prediction[0])})
 
