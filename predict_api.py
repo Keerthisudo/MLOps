@@ -5,7 +5,7 @@ from sklearn.datasets import load_iris
 
 app = Flask(__name__)
 
-# Load data and train model
+
 X, y = load_iris(return_X_y=True)
 model = LogisticRegression(max_iter=200)
 model.fit(X, y)
